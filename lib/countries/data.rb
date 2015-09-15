@@ -27,7 +27,7 @@ module ISO3166
     end
 
     def self.load_cache
-      @@cache ||= Marshal.load(File.binread(datafile_path %w(cache countries )))
+      @@cache ||= YAML.load_file(datafile_path %w(cache countries.yaml ))
     end
   end
 end
